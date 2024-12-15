@@ -36,5 +36,6 @@ private extension ApplicationDependencies {
     
     static func registerDomainLayer() {
         DIContainer.registerUserLayer()
+        DIContainer.registerServerLayer()
     }
 }

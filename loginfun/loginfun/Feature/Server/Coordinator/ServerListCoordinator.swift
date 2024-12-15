@@ -24,7 +24,7 @@ final class ServerListCoordinator: Coordinator {
 }
 
 private extension ServerListCoordinator {
-    func handle(_ route: ServerList.Route) {
+    func handle(_ route: Server.Route) {
         switch route {}
     }
 }
