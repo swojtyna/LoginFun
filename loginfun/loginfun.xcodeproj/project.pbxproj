@@ -14,7 +14,7 @@
 		2E7E76C32D0DBFDA0072D10B /* Exceptions for "loginfun" folder in "loginfun" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Targets/loginfun/Info.plist,
 			);
 			target = 2E7E76B02D0DBFDA0072D10B /* loginfun */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2NLEQZCTKJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = loginfun/Info.plist;
+				INFOPLIST_FILE = loginfun/Targets/loginfun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -178,7 +178,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2NLEQZCTKJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = loginfun/Info.plist;
+				INFOPLIST_FILE = loginfun/Targets/loginfun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
