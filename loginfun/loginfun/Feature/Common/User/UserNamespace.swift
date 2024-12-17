@@ -6,6 +6,14 @@ enum User {
         let password: String
     }
 
+    struct AuthToken {
+        let value: String
+        
+        var networkingAuthorization: Networking.Authorization {
+            .bearer(token: value)
+        }
+    }
+
     enum Error: Swift.Error {
         case noToken
         case invalidCredentials
@@ -13,10 +21,11 @@ enum User {
 }
 
 protocol UserRepository {
+    var isAuthenticated: Bool { get }
+    
     func login(username: String, password: String) async throws
     func logout()
-    func getToken() -> String?
-    var isAuthenticated: Bool { get }
+    func getToken() -> User.AuthToken?
 }
 
 protocol UserLoginUseCase {

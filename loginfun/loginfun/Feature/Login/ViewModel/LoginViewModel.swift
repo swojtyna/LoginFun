@@ -1,16 +1,51 @@
 import Combine
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    
-    private let routeSubject = PassthroughSubject<Login.Route, Never>()
-    var route: AnyPublisher<Login.Route, Never> {
-        routeSubject.eraseToAnyPublisher()
+extension Login {
+    final class ViewModel: ObservableObject {
+        @MainActor @Published var username = ""
+        @MainActor @Published var password = ""
+        @MainActor @Published private(set) var state: ViewModelState = .idle
+        
+        var route: AnyPublisher<Login.Route, Never> {
+            routeSubject.eraseToAnyPublisher()
+        }
+        private let routeSubject = PassthroughSubject<Login.Route, Never>()
+        
+        @LazyInjected private var loginUseCase: UserLoginUseCase
+        
+        func onLoginTapped() {
+            Task {
+                await login()
+            }
+        }
+        
+        @MainActor
+        func onTapDismissErrorAction() {
+            state = .idle
+        }
     }
-      
-    func onLoginTapped() {
-        routeSubject.send(.loginSuccess)
+}
+
+private extension Login.ViewModel {
+    @MainActor
+    func login() async {
+        state = .loading
+        
+        do {
+            // only for testing
+            try await loginUseCase.execute(
+                username: "tesonet",
+                password: "partyanimal"
+            )
+            
+//            try await loginUseCase.execute(
+//                username: username,
+//                password: password
+//            )
+            routeSubject.send(.loginSuccess)
+        } catch {
+            state = .error(error)
+        }
     }
 }

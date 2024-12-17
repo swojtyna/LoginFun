@@ -28,7 +28,7 @@ private extension DIContainer {
     static func registerUserRepository() {
         register(
             UserRepository.self,
-            scope: .application(User.RepositoryImpl(storage: resolve(SecureStorage.self)))
+            scope: .application(User.RepositoryImpl())
         )
     }
 

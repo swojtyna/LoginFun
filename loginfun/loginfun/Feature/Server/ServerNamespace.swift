@@ -10,23 +10,26 @@ enum Server {
     enum Error: Swift.Error {
         case invalidData
         case networkError
+        case unauthorized
     }
     
     // ViewModel
     
     enum ViewModelState {
         case loading
-        case loaded([Server.Model])
+        case loaded([ServerRowDisplayable])
         case error(Swift.Error)
     }
     
-    // Coordiantor
+    // Coordinator
     
-    enum Route {}
+    enum Route {
+        case logout
+    }
 }
 
 protocol ServerRepository {
-    func fetchServers() async throws -> [Server.Model]
+    func fetchServers(token: User.AuthToken) async throws -> [Server.Model]
 }
 
 protocol ServerFetchUseCase {

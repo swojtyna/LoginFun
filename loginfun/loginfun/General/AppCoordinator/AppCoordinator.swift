@@ -7,7 +7,11 @@ final class AppCoordinator {
     
     init(windowScene: UIWindowScene) {
         self.window = UIWindow(windowScene: windowScene)
-        self.navigator = NavigationControllerNavigator(navigationController: UINavigationController())
+        
+        let navigationController = UINavigationController()
+        navigationController.setNavigationBarHidden(true, animated: false)
+        
+        self.navigator = NavigationControllerNavigator(navigationController: navigationController)
     }
     
     func start() {

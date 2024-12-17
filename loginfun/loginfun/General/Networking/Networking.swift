@@ -30,6 +30,17 @@ enum Networking {
     }
 }
 
+extension Networking.Error {
+   var isUnauthorized: Bool {
+       guard case let .networkError(error) = self,
+             let networkError = error as? Networking.Error,
+             case .unauthorized = networkError else {
+           return false
+       }
+       return true
+   }
+}
+
 protocol Endpoint {
     var baseURL: String { get }
     var path: String { get }

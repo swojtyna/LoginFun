@@ -11,10 +11,11 @@ final class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = LoginViewModel()
+        let viewModel = Login.ViewModel()
         let viewController = UIHostingController(rootView: LoginView(viewModel: viewModel))
         
         viewModel.route
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] route in
                 self?.handle(route)
             }

@@ -10,21 +10,25 @@ final class ServerListCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = ServerListViewModel()
+        let viewModel = Server.ListViewModel()
         let viewController = UIHostingController(rootView: ServerListView(viewModel: viewModel))
         
         viewModel.route
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] route in
                 self?.handle(route)
             }
             .store(in: &cancellables)
-            
+
         navigator.push(viewController, animated: true)
     }
 }
 
 private extension ServerListCoordinator {
     func handle(_ route: Server.Route) {
-        switch route {}
+        switch route {
+        case .logout:
+            navigator.pop(animated: true)
+        }
     }
 }

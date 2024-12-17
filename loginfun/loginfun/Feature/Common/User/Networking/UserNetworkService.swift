@@ -9,8 +9,14 @@ extension User {
         @LazyInjected private var apiClient: APIClient
         
         func login(username: String, password: String) async throws -> TokenEndpoint.TokenDTO {
-            let credentials = TokenEndpoint.LoginCredentialsDTO(username: username, password: password)
-            return try await apiClient.execute(TokenEndpoint.login(credentials), authorization: .none)
+            let credentials = TokenEndpoint.LoginCredentialsDTO(
+                username: username,
+                password: password
+            )
+            return try await apiClient.execute(
+                TokenEndpoint.login(credentials),
+                authorization: .none
+            )
         }
     }
 }
