@@ -2,6 +2,7 @@ import Foundation
 
 extension DIContainer {
     static func registerServerLayer() {
+        registerStorages()
         registerNetworkServices()
         registerServerRepository()
         registerServerUseCases()
@@ -9,10 +10,17 @@ extension DIContainer {
 }
 
 private extension DIContainer {
+    static func registerStorages() {
+        register(
+            ServersStorage.self,
+            scope: .unique(ServersUserDefaultsStorage())
+        )
+    }
+    
     static func registerNetworkServices() {
         register(
             ServerNetworkService.self,
-            scope: .application(Server.NetworkServiceImpl())
+            scope: .unique(Server.NetworkServiceImpl())
         )
     }
     

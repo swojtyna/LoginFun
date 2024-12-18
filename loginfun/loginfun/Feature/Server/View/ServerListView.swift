@@ -21,6 +21,7 @@ private enum Constants {
 
 struct ServerListView: View {
     @StateObject var viewModel: Server.ListViewModel
+    @State private var showFilterSheet = false
     
     var body: some View {
         ZStack {
@@ -104,7 +105,7 @@ private extension ServerListView {
     
     var filterButton: some View {
         Button {
-            viewModel.filter()
+            showFilterSheet.toggle()
         } label: {
             HStack {
                 Image(systemName: "arrow.up.arrow.down")
@@ -113,6 +114,23 @@ private extension ServerListView {
                 Text("Filter")
             }
             .foregroundColor(.blue)
+        }
+        .disabled(!viewModel.isFilterEnabled)
+        .actionSheet(isPresented: $showFilterSheet) {
+            ActionSheet(
+                title: Text(""),
+                message: nil,
+                buttons: [
+                    .default(Text("By Distance")) {
+                        viewModel.filterByDistance()
+
+                    },
+                    .default(Text("Alphabetical")) {
+                        viewModel.filterAlphabetically()
+                    },
+                    .cancel()
+                ]
+            )
         }
     }
     

@@ -10,7 +10,7 @@ private extension DIContainer {
     static func registerAPIClient() {
         register(
             APIClient.self,
-            scope: .application(Networking.APIClientImpl())
+            scope: .unique(Networking.APIClientImpl())
         )
     }
 }

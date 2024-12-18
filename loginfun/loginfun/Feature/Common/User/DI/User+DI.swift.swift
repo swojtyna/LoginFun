@@ -21,7 +21,7 @@ private extension DIContainer {
     static func registerNetworkServices() {
         register(
             UserNetworkService.self,
-            scope: .application(User.NetworkServiceImpl())
+            scope: .unique(User.NetworkServiceImpl())
         )
     }
     

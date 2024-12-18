@@ -1,3 +1,4 @@
+import Combine
 import Foundation
 
 enum Server {
@@ -29,9 +30,11 @@ enum Server {
 }
 
 protocol ServerRepository {
-    func fetchServers(token: User.AuthToken) async throws -> [Server.Model]
+    var serversPublisher: AnyPublisher<[Server.Model], Never> { get }
+    func fetchServers(token: User.AuthToken) async throws
 }
 
 protocol ServerFetchUseCase {
-    func execute() async throws -> [Server.Model]
+    var serversPublisher: AnyPublisher<[Server.Model], Never> { get }
+    func execute() async throws
 }
