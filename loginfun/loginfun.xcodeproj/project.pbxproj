@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		2EB35FC92D14C2AB0029726B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E7E76A92D0DBFDA0072D10B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E7E76B02D0DBFDA0072D10B;
+			remoteInfo = loginfun;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2E7E76B12D0DBFDA0072D10B /* loginfun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginfun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB35FC52D14C2AB0029726B /* loginfunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loginfunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = loginfun;
 			sourceTree = "<group>";
 		};
+		2EB35FC62D14C2AB0029726B /* loginfunTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = loginfunTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2E7E76AE2D0DBFDA0072D10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EB35FC22D14C2AB0029726B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7E76B32D0DBFDA0072D10B /* loginfun */,
+				2EB35FC62D14C2AB0029726B /* loginfunTests */,
 				2E7E76B22D0DBFDA0072D10B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7E76B12D0DBFDA0072D10B /* loginfun.app */,
+				2EB35FC52D14C2AB0029726B /* loginfunTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,29 @@
 			productReference = 2E7E76B12D0DBFDA0072D10B /* loginfun.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2EB35FC42D14C2AB0029726B /* loginfunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EB35FCB2D14C2AB0029726B /* Build configuration list for PBXNativeTarget "loginfunTests" */;
+			buildPhases = (
+				2EB35FC12D14C2AB0029726B /* Sources */,
+				2EB35FC22D14C2AB0029726B /* Frameworks */,
+				2EB35FC32D14C2AB0029726B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EB35FCA2D14C2AB0029726B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2EB35FC62D14C2AB0029726B /* loginfunTests */,
+			);
+			name = loginfunTests;
+			packageProductDependencies = (
+			);
+			productName = loginfunTests;
+			productReference = 2EB35FC52D14C2AB0029726B /* loginfunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +143,10 @@
 				TargetAttributes = {
 					2E7E76B02D0DBFDA0072D10B = {
 						CreatedOnToolsVersion = 16.1;
+					};
+					2EB35FC42D14C2AB0029726B = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 2E7E76B02D0DBFDA0072D10B;
 					};
 				};
 			};
@@ -113,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				2E7E76B02D0DBFDA0072D10B /* loginfun */,
+				2EB35FC42D14C2AB0029726B /* loginfunTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2E7E76AF2D0DBFDA0072D10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EB35FC32D14C2AB0029726B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +195,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EB35FC12D14C2AB0029726B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EB35FCA2D14C2AB0029726B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E7E76B02D0DBFDA0072D10B /* loginfun */;
+			targetProxy = 2EB35FC92D14C2AB0029726B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2E7E76C52D0DBFDA0072D10B /* Debug */ = {
@@ -321,6 +396,42 @@
 			};
 			name = Release;
 		};
+		2EB35FCC2D14C2AB0029726B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2NLEQZCTKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funfun.loginfunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loginfun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/loginfun";
+			};
+			name = Debug;
+		};
+		2EB35FCD2D14C2AB0029726B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2NLEQZCTKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funfun.loginfunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loginfun.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/loginfun";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +449,15 @@
 			buildConfigurations = (
 				2E7E76C52D0DBFDA0072D10B /* Debug */,
 				2E7E76C62D0DBFDA0072D10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EB35FCB2D14C2AB0029726B /* Build configuration list for PBXNativeTarget "loginfunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EB35FCC2D14C2AB0029726B /* Debug */,
+				2EB35FCD2D14C2AB0029726B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

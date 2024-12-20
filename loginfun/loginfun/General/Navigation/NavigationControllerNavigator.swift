@@ -14,8 +14,8 @@ struct NavigationControllerNavigator: Navigator {
     func pop(animated: Bool) {
         navigationController.popViewController(animated: animated)
     }
-    
-    func setRoot(_ viewController: UIViewController, animated: Bool) {
-        navigationController.setViewControllers([viewController], animated: animated)
+
+    func setRoot(_ viewControllers: [UIViewController], animated: Bool) {
+        navigationController.setViewControllers(viewControllers, animated: animated)
     }
 }
